@@ -2,8 +2,7 @@ package language_bases
 
 fun main() {
     println("Как вас зовут?")
-    val input = readln();
-    val name = if(input.isNotBlank()) input else "Kotlin"
+    val name = readln();
 
-    println("Hello, $name! You have an ${name.length}-letter name! :)")
+    println("Hello, ${ if (name.isNotBlank()) name else "Kotlin"}!")
 }
