@@ -4,8 +4,12 @@ import org.junit.jupiter.api.Test
 
 import org.junit.jupiter.api.Assertions.*
 
-class FunctionsTest {
+class FunctionsKtTest {
 
+    @Test
+    fun min() {
+        assertEquals(5, min(7, 5))
+    }
 
     @Test
     fun max() {
