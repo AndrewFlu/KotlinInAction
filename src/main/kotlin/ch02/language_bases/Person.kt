@@ -1,4 +1,4 @@
-package language_bases
+package ch02.language_bases
 
 class Person(
     val name: String,
