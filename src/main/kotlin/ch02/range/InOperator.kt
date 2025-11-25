@@ -7,4 +7,7 @@ fun main() {
     println(isLetter('y'))
     println(isNotDigit('7'))
     println(isNotDigit('q'))
+
+    println("Kotlin" in "Java".."Scala")
+    println("Kotlin" in setOf("Java", "Scala"))
 }
