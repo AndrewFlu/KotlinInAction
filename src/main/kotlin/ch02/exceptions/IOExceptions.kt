@@ -14,7 +14,16 @@ fun readNumber(reader: BufferedReader): Int? {
     }
 }
 
+fun readNumber2(reader: BufferedReader): Int {
+    val line = reader.readLine()
+    reader.close()
+
+    return Integer.parseInt(line)
+}
+
 fun main() {
     val reader = BufferedReader(StringReader("12345"))
+    val reader2 = BufferedReader(StringReader("notANumber"))
     println(readNumber(reader))
+    println(readNumber2(reader2))
 }
