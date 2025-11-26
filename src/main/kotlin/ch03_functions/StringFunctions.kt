@@ -20,4 +20,9 @@ fun <T> joinToString(
 fun main() {
     val list = listOf(1, 5, 100)
     println(joinToString(list, " | ", "< ", " >"))
+
+    val macbooks = listOf("MacBook Air 13 M1", "MacBook Pro 16 M1 Pro", "MacBook Air 15 M4")
+    println(
+        joinToString(collection = macbooks, prefix = "\"", postfix = "\"", separator = " / ")
+    )
 }
