@@ -1,4 +1,4 @@
-package ch02.language_bases
+package ch02_language_basis.language_bases
 
 fun main() {
     val mike = Person("Mike", true);

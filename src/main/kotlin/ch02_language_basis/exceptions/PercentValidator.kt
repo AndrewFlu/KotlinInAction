@@ -1,4 +1,4 @@
-package ch02.exceptions
+package ch02_language_basis.exceptions
 
 fun validatePercent(number: Int) =
     if (number in 0..100)

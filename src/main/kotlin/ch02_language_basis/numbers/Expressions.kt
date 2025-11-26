@@ -1,4 +1,4 @@
-package ch02.numbers
+package ch02_language_basis.numbers
 
 interface Expression
 

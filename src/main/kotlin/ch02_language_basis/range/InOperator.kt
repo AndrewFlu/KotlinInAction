@@ -1,4 +1,4 @@
-package ch02.range
+package ch02_language_basis.range
 
 fun isLetter(c: Char) = c in 'a'..'z' || c in 'A'..'Z'
 fun isNotDigit(c: Char) = c !in '1'..'9'

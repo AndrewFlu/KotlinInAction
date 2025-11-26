@@ -1,4 +1,4 @@
-package ch02.loops
+package ch02_language_basis.loops
 
 fun main() {
     val apartment = listOf("Первомайская 77", "Кирова 25")

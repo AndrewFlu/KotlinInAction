@@ -1,4 +1,4 @@
-package ch02.range
+package ch02_language_basis.range
 
 fun recognize(c: Char) = when(c) {
     in '0'..'9' -> "It's a digit!"

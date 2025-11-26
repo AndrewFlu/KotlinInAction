@@ -1,4 +1,4 @@
-package ch02.language_bases;
+package ch02_language_basis.language_bases;
 
 public class PersonDemo {
     public static void main(String[] args) {

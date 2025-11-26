@@ -1,4 +1,4 @@
-package ch02.exceptions
+package ch02_language_basis.exceptions
 
 import java.io.BufferedReader
 import java.io.StringReader

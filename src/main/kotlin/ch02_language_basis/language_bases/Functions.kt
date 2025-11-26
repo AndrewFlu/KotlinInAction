@@ -1,4 +1,4 @@
-package ch02.language_bases
+package ch02_language_basis.language_bases
 
 fun max(a: Int, b: Int): Int {
     return if (a < b) b else a

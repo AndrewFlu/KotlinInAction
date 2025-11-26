@@ -1,6 +1,6 @@
-package ch02.colors
+package ch02_language_basis.colors
 
-import ch02.colors.Color.*
+import ch02_language_basis.colors.Color.*
 
 fun mix(c1 : Color, c2: Color) =
     when(setOf(c1, c2)) {

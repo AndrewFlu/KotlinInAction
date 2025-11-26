@@ -1,4 +1,4 @@
-package ch02.colors
+package ch02_language_basis.colors
 
 enum class Color (
     val r: Int,
