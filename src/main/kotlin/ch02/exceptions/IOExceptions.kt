@@ -25,7 +25,7 @@ fun readNumber3(reader: BufferedReader) {
     val number = try {
         Integer.parseInt(reader.readLine())
     } catch (e: NumberFormatException) {
-        return
+        null
     }
 
     println(number)
@@ -33,10 +33,15 @@ fun readNumber3(reader: BufferedReader) {
 
 
 fun main() {
+    // print correctly
     val reader = BufferedReader(StringReader("12345"))
-    val reader2 = BufferedReader(StringReader("notANumber"))
-    val reader3 = BufferedReader(StringReader("5"))
     println(readNumber(reader))
-    println(readNumber3(reader3))
+
+    // print null
+    val reader3 = BufferedReader(StringReader("NOT a number"))
+    readNumber3(reader3)
+
+    // throw exception
+    val reader2 = BufferedReader(StringReader("notANumber"))
     println(readNumber2(reader2))
 }
