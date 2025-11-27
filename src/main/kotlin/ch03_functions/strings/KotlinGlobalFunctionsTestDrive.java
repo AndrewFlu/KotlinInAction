@@ -4,11 +4,11 @@ import java.util.List;
 
 public class KotlinGlobalFunctionsTestDrive {
     public static void main(String[] args) {
-        System.out.println(JoinKt.joinToString(
-                List.of(5, 15, 100),
-                " = ",
-                "{",
-                "}"
+        System.out.println(StringUtils.joinToString(
+                        List.of(5, 15, 100),
+                        " = ",
+                        "{",
+                        "}"
                 )
         );
     }
