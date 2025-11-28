@@ -10,8 +10,19 @@ fun parsePath(path: String) {
     println("Dir: $directory, name: $fileName, ext: $extension")
 }
 
+fun parsePathRegex(path: String) {
+    val regex = """(.+)/(.+)\.(.+)""".toRegex()
+    val matchResult = regex.matchEntire(path)
+    if (matchResult != null) {
+        val (directory, fileName, extension) = matchResult.destructured
+        println("Dir: $directory, name: $fileName, ext: $extension")
+    }
+
+
+}
 
 fun main() {
     val path = "/Users/andrey/Documents/dev/projects/KotlinInActionHomeWork/pom.xml"
     parsePath(path)
+    parsePathRegex(path)
 }
