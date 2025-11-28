@@ -17,3 +17,9 @@ fun <T> Collection<T>.joinToString(
 
     return result.toString()
 }
+
+fun main() {
+    // функцию-расширение можно вызвать как член класса (любого класса, являющегося Collection)
+    val motoCompanies = listOf("Yamaha", "Harley-Davidson", "Suzuki")
+    println(motoCompanies.joinToString())
+}
