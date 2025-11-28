@@ -11,5 +11,6 @@ public class KotlinGlobalFunctionsTestDrive {
                         "}"
                 )
         );
+        System.out.println(StringExtensionsKt.getLastChar("Kotlin"));
     }
 }
