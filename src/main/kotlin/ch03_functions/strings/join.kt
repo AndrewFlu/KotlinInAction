@@ -18,8 +18,17 @@ fun <T> Collection<T>.joinToString(
     return result.toString()
 }
 
+fun Collection<String>.join(
+    separator: String = ", ",
+    prefix: String = "",
+    postfix: String = ""
+) = joinToString(separator, prefix, postfix)
+
 fun main() {
     // функцию-расширение можно вызвать как член класса (любого класса, являющегося Collection)
     val motoCompanies = listOf("Yamaha", "Harley-Davidson", "Suzuki")
     println(motoCompanies.joinToString())
+
+    println(motoCompanies.join(" : "))
+//    println(listOf(1, 2, 3, 4, 5).join()) // doesn't work cause type mismatch
 }
