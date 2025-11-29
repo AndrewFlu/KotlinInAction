@@ -2,20 +2,24 @@ package ch03_functions.local_functions
 
 class User(val id: Int, val name: String, val address: String)
 
-fun saveUser(user: User) {
-
-    // объявление локальной функции для валидации полей
+fun User.validateBeforeSave() {
     fun validate(value: String, fieldName: String) {
         if (value.isEmpty())
             throw IllegalArgumentException(
-                "Can't save user ${user.id}: empty $fieldName")
+                "Can't save user ${id}: empty $fieldName"
+            )
     }
-    // вызов локальной функции для валидация опеределённых полей
-    validate(user.name, "Name")
-    validate(user.address, "Address")
+
+    validate(name, "Name")
+    validate(address, "Address")
 }
 
-// сохранение данных пользователя в базе данных
+fun saveUser(user: User) {
+    user.validateBeforeSave()
+    // код сохранения данных пользователя в базе данных
+}
+
+
 fun main() {
-    saveUser(User(2, "", ""))
+    saveUser(User(1, "Robert", ""))
 }
