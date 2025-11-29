@@ -1,5 +1,7 @@
 package ch03_functions.strings
 
+import org.intellij.lang.annotations.Language
+
 val kotlinLogo = """
     |  //
     | //
@@ -7,6 +9,7 @@ val kotlinLogo = """
     |/ \
 """.trimIndent()
 
+@Language("JSON")
 val expectedObject = """
     {
         "name": "Robert",
