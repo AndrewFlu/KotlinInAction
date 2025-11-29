@@ -15,8 +15,9 @@ val expectedObject = """
     }
 """.trimIndent()
 
+// для корректной интерпретации Unicode требуется использовать синтаксис выражений
 val thinkEmoji = """
-    Hmm ${"\uD83E\uDD14"} // для корректной интерпретации Unicode требуется использовать синтаксис выражений
+    Hmm ${"\uD83E\uDD14"} 
 """.trimIndent()
 
 fun main() {
