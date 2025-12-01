@@ -1,4 +1,4 @@
-package ch04_classes_interfaces.sealed_classes.interfaces
+package ch04_classes_interfaces.sealed
 
 interface Expr
 

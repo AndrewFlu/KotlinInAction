@@ -1,0 +1,14 @@
+package ch04_classes_interfaces.sealed.classes
+
+sealed class Expr
+
+class Num(val value: Int) : Expr()
+class Sum(val left: Int, val right: Int) : Expr()
+class Mul(val left: Int, val right: Int) : Expr()
+
+fun eval(e: Expr) =
+    when (e) {
+        is Num -> e.value
+        is Sum -> e.left + e.right
+        is Mul -> e.left * e.right
+    }
