@@ -14,7 +14,7 @@ public class JavaButton implements View{
         //TODO("")
     }
 
-    public class ButtonState implements State {
+    public static class ButtonState implements State {
 
     }
 }
