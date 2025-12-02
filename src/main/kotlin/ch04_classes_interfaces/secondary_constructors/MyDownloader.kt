@@ -2,13 +2,13 @@ package ch04_classes_interfaces.secondary_constructors
 
 import java.net.URI
 
-open class Downloader {
+class MyDownloader : Downloader {
 
-    constructor(url: String?) {
+    constructor(url: String?) : super(url){
         // код
     }
 
-    constructor(uri: URI?) {
+    constructor(uri: URI?) : super(uri) {
         // код
     }
 }
