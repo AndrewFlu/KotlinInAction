@@ -11,13 +11,17 @@ class Customer(val name: String, val postalCode: String) {
             return false
         return name == other.name && postalCode == other.postalCode
     }
+
+    override fun hashCode(): Int = name.hashCode() * 31 + postalCode.hashCode()
 }
 
 fun main() {
     val zhenya1 = Customer("Zhenya", "Yo, Uraeva 6b")
     val zhenya2 = Customer("Zhenya", "Yo, Uraeva 6b")
+    val hipstersSet = hashSetOf(zhenya1)
 
     println(zhenya1)
     println(zhenya2)
-    println(zhenya1 == zhenya2)
+    println("zhenya1 == zhenya2: ${zhenya1 == zhenya2}")
+    println("hipstersSet contains zhenya2: ${hipstersSet.contains(zhenya2)}")
 }
