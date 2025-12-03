@@ -17,5 +17,7 @@ fun main() {
     val zhenya1 = Customer("Zhenya", "Yo, Uraeva 6b")
     val zhenya2 = Customer("Zhenya", "Yo, Uraeva 6b")
 
+    println(zhenya1)
+    println(zhenya2)
     println(zhenya1 == zhenya2)
 }
