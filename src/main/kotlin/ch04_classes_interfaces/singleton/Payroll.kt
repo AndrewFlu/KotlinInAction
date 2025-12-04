@@ -11,3 +11,8 @@ object Payroll {
         }
     }
 }
+
+fun main() {
+    Payroll.allEmployees.addLast(Person(1990))
+    Payroll.calculateSalary()
+}
