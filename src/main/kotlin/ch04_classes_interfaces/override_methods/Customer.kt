@@ -13,6 +13,9 @@ class Customer(val name: String, val postalCode: String) {
     }
 
     override fun hashCode(): Int = name.hashCode() * 31 + postalCode.hashCode()
+
+    fun copy(name: String = this.name, postalCode: String = this.postalCode) =
+        Customer(name, postalCode)
 }
 
 fun main() {
@@ -24,4 +27,7 @@ fun main() {
     println(zhenya2)
     println("zhenya1 == zhenya2: ${zhenya1 == zhenya2}")
     println("hipstersSet contains zhenya2: ${hipstersSet.contains(zhenya2)}")
+    println()
+
+    println(zhenya1.copy(postalCode = "Yo, Petrova 22"))
 }
