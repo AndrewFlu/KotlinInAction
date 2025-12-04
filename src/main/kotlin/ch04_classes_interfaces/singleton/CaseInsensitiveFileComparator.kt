@@ -11,4 +11,9 @@ object CaseInsensitiveFileComparator : Comparator<File> {
 fun main() {
     println(CaseInsensitiveFileComparator.compare(File("/Users/andrew"), File("/users/andrew")))
     println(CaseInsensitiveFileComparator.compare(File("/Users/andrew/Documents"), File("/users/andrew")))
+
+    println()
+
+    val files = listOf(File("/Z"), File("/a"))
+    println(files.sortedWith(CaseInsensitiveFileComparator)) // объект Comparator можно передавать в функцию, принимающую такой тип
 }
