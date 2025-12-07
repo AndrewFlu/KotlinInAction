@@ -21,6 +21,7 @@ fun main() {
     val theOldest = colleagues.maxByOrNull { it.age } // == (people -> people.age)
     println(theOldest)
 
-    //
-
+    // с ФП (ссылка на член без вызова)
+    val oldest = colleagues.maxByOrNull(People::age) // == (people -> people.age)
+    println(oldest)
 }
