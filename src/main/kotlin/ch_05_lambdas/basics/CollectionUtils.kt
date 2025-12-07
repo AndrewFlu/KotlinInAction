@@ -14,5 +14,13 @@ fun findTheOldest(people: List<People>) {
 
 fun main() {
     val colleagues = listOf(People("Mikle", 27), People("Viktor", 42), People("Sergey", 34))
+    // без ФП
     findTheOldest(colleagues)
+
+    // с ФП (скрытое имя it)
+    val theOldest = colleagues.maxByOrNull { it.age } // == (people -> people.age)
+    println(theOldest)
+
+    //
+
 }
