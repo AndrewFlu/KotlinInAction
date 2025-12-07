@@ -8,4 +8,6 @@ fun main() {
     val passive_income = 10_000.0
     println("Оклад: ${salary}, после вычета НДФЛ (18%): ${ndfl_18(salary)}")
     println("Общий доход: ${sum(passive_income, ndfl_18(salary))}")
+
+    run { println("Lambda with 'run' operator")}
 }
