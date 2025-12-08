@@ -10,4 +10,13 @@ fun main() {
     println("Общий доход: ${sum(passive_income, ndfl_18(salary))}")
 
     run { println("Lambda with 'run' operator")}
+
+    val loggingMultiplyLambda = { x: Int, y: Int ->
+        println("Start logging lambda...")
+        println("Stop logging lambda")
+        x * y
+    }
+    val a = 5
+    val b = 25
+    println("$a * $b = ${loggingMultiplyLambda(a, b)}")
 }
