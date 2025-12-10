@@ -19,7 +19,18 @@ fun alphabetBasedOnLambda(): String {
     }
 }
 
+fun alphabetBasedOnModernLambda(): String {
+    val builder = StringBuilder()
+    return with(builder) {
+        for (letter in 'A' .. 'Z')
+            append(letter)
+        append("\nThis is ENGLISH Alphabet\n")
+        toString()
+    }
+}
+
 fun main() {
     println(alphabet())
     println(alphabetBasedOnLambda())
+    println(alphabetBasedOnModernLambda())
 }
