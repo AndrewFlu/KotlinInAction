@@ -29,8 +29,16 @@ fun alphabetBasedOnModernLambda(): String {
     }
 }
 
+fun alphabetNew() = with(StringBuilder()) {
+    for (letter in 'A'..'Z')
+        append(letter)
+    append("\nThi is shortest alphabet function\n")
+    toString()
+}
+
 fun main() {
     println(alphabet())
     println(alphabetBasedOnLambda())
     println(alphabetBasedOnModernLambda())
+    println(alphabetNew())
 }
