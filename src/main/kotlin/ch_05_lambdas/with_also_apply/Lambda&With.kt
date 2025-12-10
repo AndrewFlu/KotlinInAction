@@ -9,6 +9,17 @@ fun alphabet(): String {
     return result.toString()
 }
 
+fun alphabetBasedOnLambda(): String {
+    val result = StringBuilder()
+    return with(result) {
+        for (letter in 'A'..'Z')
+            this.append(letter)
+        this.append("\nThis is ENGLISH Alphabet\n")
+        this.toString()
+    }
+}
+
 fun main() {
     println(alphabet())
+    println(alphabetBasedOnLambda())
 }
