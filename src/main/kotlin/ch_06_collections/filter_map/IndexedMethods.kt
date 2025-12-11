@@ -14,4 +14,8 @@ fun main() {
     println(numbers)
     println(mapped)
 
+    val mapNumbers = mapOf(0 to "zero", 1 to "one", 2 to "two")
+    val uppercased = mapNumbers.mapValues { it.value.uppercase() }
+    println(uppercased)
+
 }
