@@ -19,4 +19,5 @@ fun main() {
 
     println("Все, кто входит в клуб объёмных машин : ${carOwners.filter(powerFullClub).map(CarOwner::name)}")
 
+    println("Сколько человек входит в клуб объёмных машин : ${carOwners.filter(powerFullClub).count()}")
 }
