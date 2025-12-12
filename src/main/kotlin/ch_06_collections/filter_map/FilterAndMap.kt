@@ -1,7 +1,6 @@
 package ch_06_collections.filter_map
 
 import ch_05_lambdas.basics.People
-import ch_05_lambdas.method_references.Person
 
 fun main() {
     val people = listOf(People("Alice", 15), People("Robert", 20), People("Mike", 21))

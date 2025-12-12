@@ -1,4 +1,4 @@
-package reduce_fold
+package ch_06_collections.reduce_fold
 
 fun main() {
     val list = listOf(1, 2, 3, 4)
