@@ -8,8 +8,10 @@ class Person(val name: String, val company: Company?)
 
 // функция-расширение
 fun Person.getCountry(): String {
-    val country = this.company?.address?.country // вызов операторов безопасного вызова в цепочке
-    return if (country != null) country else "unknown"
+//    val country = this.company?.address?.country // вызов операторов безопасного вызова в цепочке
+//    return if (country != null) country else "unknown"
+
+    return company?.address?.country ?: "Unknown"
 }
 
 fun main() {
