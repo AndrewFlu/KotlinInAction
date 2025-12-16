@@ -8,7 +8,8 @@ import org.junit.jupiter.api.TestInstance
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class MyServiceTest {
 
-    private var myService: MyService? = null // объявление свойства с типом не допускающим null, с допуском null
+    //    private var myService: MyService? = null // объявление свойства с типом не допускающим null, с допуском null
+    private lateinit var myService: MyService // объявление свойства не null-типа без инициализатора
 
     @BeforeAll
     fun setUp() {
@@ -17,6 +18,7 @@ class MyServiceTest {
 
     @Test
     fun testAction() {
-        assertEquals("Action Done!", myService!!.performAction()) // необходимо позаботиться о null-безопасности
+//        assertEquals("Action Done!", myService!!.performAction()) // необходимо позаботиться о null-безопасности
+        assertEquals("Action Done!", myService.performAction()) // обращение к свойству без дополнительных null-проверок
     }
 }
