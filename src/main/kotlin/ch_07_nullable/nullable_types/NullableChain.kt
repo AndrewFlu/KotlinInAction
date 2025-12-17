@@ -1,6 +1,10 @@
 package ch_07_nullable.nullable_types
 
-class Address(val country: String, val city: String, val street: String, val zipCode: Int)
+class Address(val country: String, val city: String, val street: String, val zipCode: Int) {
+    override fun toString(): String {
+        return "$zipCode, $country, $city, $street"
+    }
+}
 
 class Company(val name: String, val address: Address?)
 
