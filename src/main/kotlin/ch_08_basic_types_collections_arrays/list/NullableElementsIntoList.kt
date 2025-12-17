@@ -12,7 +12,7 @@ fun readNumbers1(text: String): List<Int?> {
 
 fun readNumbers2(text: String): List<Int?> = text.lineSequence().map { it.toIntOrNull() }.toList()
 
-fun addValidNumbers(numbers: List<Int?>) {
+fun addValidNumbers1(numbers: List<Int?>) {
     var sumOfValidNumbers = 0
     var invalidNumbers = 0
     for (digit in numbers) {
@@ -26,6 +26,12 @@ fun addValidNumbers(numbers: List<Int?>) {
     println("Invalid numbers count: $invalidNumbers")
 }
 
+fun addValidNumbers2(numbers: List<Int?>) {
+    val validNumbers = numbers.filterNotNull()
+    println("Sum of valid numbers: ${validNumbers.sum()}")
+    println("Invalid numbers count: ${numbers.size - validNumbers.size}")
+}
+
 fun main() {
     val input = """
         1
@@ -37,5 +43,6 @@ fun main() {
     println("readNumbers1(): ${readNumbers1(input)}")
     println("readNumbers2(): ${readNumbers2(input)}")
     println()
-    addValidNumbers(readNumbers1(input))
+    addValidNumbers1(readNumbers1(input)) // императивный стиль
+    addValidNumbers2(readNumbers2(input)) // функциональный стиль
 }
