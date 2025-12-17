@@ -10,7 +10,7 @@ fun readNumbers1(text: String): List<Int?> {
     return result
 }
 
-
+fun readNumbers2(text: String): List<Int?> = text.lineSequence().map { it.toIntOrNull() }.toList()
 
 fun main() {
     val input = """
@@ -21,4 +21,5 @@ fun main() {
     """.trimIndent()
 
     println("readNumbers1(): ${readNumbers1(input)}")
+    println("readNumbers2(): ${readNumbers2(input)}")
 }
