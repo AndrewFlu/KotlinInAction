@@ -12,6 +12,20 @@ fun readNumbers1(text: String): List<Int?> {
 
 fun readNumbers2(text: String): List<Int?> = text.lineSequence().map { it.toIntOrNull() }.toList()
 
+fun addValidNumbers(numbers: List<Int?>) {
+    var sumOfValidNumbers = 0
+    var invalidNumbers = 0
+    for (digit in numbers) {
+        if (digit != null)
+            sumOfValidNumbers += digit
+        else
+            invalidNumbers++
+    }
+
+    println("Sum of valid numbers: $sumOfValidNumbers")
+    println("Invalid numbers count: $invalidNumbers")
+}
+
 fun main() {
     val input = """
         1
@@ -22,4 +36,6 @@ fun main() {
 
     println("readNumbers1(): ${readNumbers1(input)}")
     println("readNumbers2(): ${readNumbers2(input)}")
+    println()
+    addValidNumbers(readNumbers1(input))
 }
