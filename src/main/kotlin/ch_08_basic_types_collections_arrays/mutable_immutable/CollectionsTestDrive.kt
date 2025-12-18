@@ -10,4 +10,7 @@ fun main() {
     val target: MutableCollection<Int> = arrayListOf(7)
     copyElements(source, target) // модификация target
     println(target)
+
+    val invalidTypeTarget: Collection<Int> = arrayListOf(0)
+//    copyElements(source, invalidTypeTarget) // передавать отличный от целевого типа MutableCollection нельзя
 }
