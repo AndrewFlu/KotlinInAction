@@ -1,9 +1,9 @@
 package ch_09_operators.plus
 
-data class Point(val x: Int, val y: Int) {
-    operator fun plus(other: Point): Point {
-        return Point((x + other.x), (y + other.y))
-    }
+data class Point(val x: Int, val y: Int)
+
+operator fun Point.plus(other: Point): Point {
+    return Point((x + other.x), (y + other.y))
 }
 
 fun main() {
