@@ -1,4 +1,4 @@
-package ch_09_operators.plus_assign
+package ch_09_operators.binary_assign
 
 fun main() {
     val autos = mutableListOf("logan", "e81")

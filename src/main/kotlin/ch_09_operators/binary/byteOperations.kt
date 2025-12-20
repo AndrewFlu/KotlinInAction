@@ -1,4 +1,4 @@
-package ch_09_operators.plus
+package ch_09_operators.binary
 
 fun main() {
     println(0x0F)

@@ -1,4 +1,4 @@
-package ch_09_operators.plus
+package ch_09_operators.binary
 
 data class Point(val x: Int, val y: Int)
 
