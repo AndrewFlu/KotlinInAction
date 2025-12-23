@@ -4,9 +4,9 @@ package ch_09_operators.destructurization
 data class NameComponents(val name: String, val extension: String)
 
 fun splitFileName(fullName: String): NameComponents {
-    val result = fullName.split('.', limit = 2)
+    val (name, extension) = fullName.split('.', limit = 2)
 
-    return NameComponents(result[0], result[1]) // возврат экземпляра данных из функции
+    return NameComponents(name, extension) // возврат экземпляра данных из функции
 }
 
 fun main() {
