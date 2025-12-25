@@ -1,14 +1,16 @@
 package ch_09_operators.delegates.observers
 
+import kotlin.reflect.KProperty
+
 class ObservableProperty (
-    val propName: String,
     var propValue: Any,
     val observable: Observable
 ) {
-    fun getValue(): Any = propValue
-    fun setValue(newValue: Any) {
+    operator fun getValue(thisRef: Any?, prop: KProperty<*>): Any = propValue
+
+    operator fun setValue(thisRef: Any?, prop: KProperty<*>, newValue: Any) {
         val oldValue = propValue
         propValue = newValue
-        observable.notifyObservers(propName, oldValue, newValue)
+        observable.notifyObservers(prop.name, oldValue, newValue)
     }
 }
