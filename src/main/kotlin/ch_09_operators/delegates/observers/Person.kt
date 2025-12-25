@@ -1,17 +1,17 @@
 package ch_09_operators.delegates.observers
 
 class Person(name: String, val age: Int, salary: Int): Observable() {
-    var name: String = name
+    val _name = ObservableProperty("name", name, this)
+    var name: Any
+        get() = _name.getValue()
         set(newValue) {
-            val oldValue = field // field позволяет получить доступ к теневому полю свойства
-            field = newValue
-            notifyObservers("name", oldValue, newValue)
+            _name.setValue(newValue)
         }
 
-    var salary: Int = salary
+    val _salary = ObservableProperty("salary", salary, this)
+    var salary: Any
+        get() = _salary.getValue()
         set(newValue) {
-            val oldValue = field
-            field = newValue
-            notifyObservers("salary", oldValue, newValue) // уведомление наблюдателей об изменении свойства
+            _salary.setValue(newValue)
         }
 }
