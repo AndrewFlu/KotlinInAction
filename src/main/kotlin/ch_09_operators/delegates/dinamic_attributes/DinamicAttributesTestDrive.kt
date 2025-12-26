@@ -16,4 +16,18 @@ fun main() {
 
     juran.setAttribute("moto", "Harley-Davidson")
     println("${juran.name}, has a motorcycle ${juran.moto}")
+
+    println()
+
+    val zhenya = DelegatedPerson()
+    val zhenyaData = mapOf(
+        "name" to "Zhenya",
+        "auto" to "Geely"
+    )
+    for ((key, value) in zhenyaData)
+        zhenya.setAttribute(key, value)
+
+    println("Проверка экземпляра DelegatedPerson:")
+    println("${zhenya.name}, has a auto ${zhenya.auto}")
+    println("${zhenya.name}, has a moto ${zhenya.moto}") // исключение. Как сделать значение по умолчанию?
 }
