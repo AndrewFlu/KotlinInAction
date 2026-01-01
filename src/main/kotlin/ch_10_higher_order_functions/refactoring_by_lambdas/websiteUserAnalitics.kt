@@ -37,6 +37,9 @@ fun main() {
     println("Средняя продолжительность посещений с машин Mac OS: ${log.averageDurationFor(OS.MAC_OS)}")
 
     val averageMobileDuration = log.filter { it.os in setOf(OS.IOS, OS.ANDROID) }.map(SiteVisit::duration).average()
+    println("Средняя продолжительность посещений с мобильных устройств: ${averageMobileDuration}")
+
+
     println(
         "Средняя продолжительность посещения страницы регистрации: " +
                 "${log.averageDurationFor { siteVisit -> siteVisit.path == "/signup" }}"
