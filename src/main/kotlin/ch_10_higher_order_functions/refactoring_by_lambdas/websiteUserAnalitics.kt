@@ -23,6 +23,12 @@ fun windowsSessionDurationAverage() =
         .map(SiteVisit::duration)
         .average()
 
+fun List<SiteVisit>.averageDurationFor(os: OS) =
+    filter { it.os == os }
+        .map(SiteVisit::duration)
+        .average()
+
 fun main() {
     println("Средняя продолжительность посещений с машин Windows: ${windowsSessionDurationAverage()}")
+    println("Средняя продолжительность посещений с машин Mac OS: ${log.averageDurationFor(OS.MAC_OS)}")
 }
