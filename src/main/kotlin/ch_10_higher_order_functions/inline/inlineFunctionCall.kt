@@ -14,7 +14,15 @@ inline fun <T> synchronized(lock: Lock, action: () -> T): T {
     }
 }
 
+fun foo(lock: Lock) {
+    println("Before sync")
+    synchronized(lock, { println("action") }) // этот вызов превратится во встроенное тело функции synchronized()
+    println("After sync")
+}
+
 fun main() {
     val lock = ReentrantLock()
     synchronized(lock) { println("Lambda") }
+    println()
+    foo(lock)
 }
