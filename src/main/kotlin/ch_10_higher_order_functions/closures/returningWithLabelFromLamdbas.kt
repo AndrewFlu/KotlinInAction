@@ -10,7 +10,15 @@ fun findMacbookPro(macbooks: List<Macbook>) {
     }
 }
 
+fun findMacbookAir(macbooks: List<Macbook>) {
+    macbooks.forEach{
+        if (it.model != "MacBook Air") return@forEach
+        println("'MacBook Air' found!")
+    }
+}
+
 fun main() {
     val macbooks = listOf(Macbook("MacBook Air", 2017), Macbook("MacBook Pro", 2019))
     findMacbookPro(macbooks)
+    findMacbookAir(macbooks)
 }
