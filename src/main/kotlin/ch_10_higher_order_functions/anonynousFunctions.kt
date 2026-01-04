@@ -21,4 +21,9 @@ fun main () {
         Bike("Harley-Davidson" , "Sportster 800"),
     )
     findSportster(bikes)
+    println()
+    val sportstersList = bikes.filter(fun(bike): Boolean {
+        return bike.model.lowercase().contains("sportster")
+    })
+    println("Found Sporsters: $sportstersList")
 }
