@@ -8,4 +8,5 @@ fun printSum(collection: Collection<*>) {
 fun main() {
     printSum(listOf(1, 2, 3, 4, 5))
     printSum(setOf(1, 2, 3, 4, 5)) // IllegalArgumentException: List is expected
+    printSum(listOf("a", "b")) // ClassCastException
 }
