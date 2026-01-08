@@ -9,7 +9,7 @@ open class Animal {
 
 
 // Стадо. Типизируется конкретным типом, наследником Animal
-class Herd<T : Animal> {
+class Herd<out T : Animal> { // добавление ключевого слова out делает тип T ковариантным и допускает подтипы Animal
     val size: Int
         get() {
             TODO()
