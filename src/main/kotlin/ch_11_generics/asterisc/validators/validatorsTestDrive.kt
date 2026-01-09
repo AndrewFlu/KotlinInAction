@@ -13,4 +13,8 @@ fun main() {
     val stringFieldValidator = validators[String::class] as FieldValidator<String>
     println(stringFieldValidator.validate(""))
     println(stringFieldValidator.validate("check"))
+
+    // "случайная" ошибка при выведении типа валидатора
+    val invalidStringValidator = validators[Int::class] as FieldValidator<String>
+    invalidStringValidator.validate("check string") // ClassCastException
 }
