@@ -1,4 +1,4 @@
-package ch_14_korutines.suspend_functions
+package ch_14_coroutines.suspend_functions
 
 // модификатор suspend помечает функцию как функцию приостановки
 suspend fun suspendingFunction() {}

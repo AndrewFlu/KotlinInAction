@@ -1,4 +1,4 @@
-package ch_14_korutines.kotlin_threads
+package ch_14_coroutines.kotlin_threads
 
 import kotlin.concurrent.thread
 
