@@ -1,0 +1,30 @@
+package ch_15_structured_concyrrency.cancel_coroutines
+
+import ch_14_coroutines.coroutines_constructors.log
+import jdk.jfr.internal.test.DeprecatedMethods.counter
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
+import kotlin.time.Duration.Companion.milliseconds
+
+suspend fun doCpuHeavyWork(): Int {
+    log("I'm doing work")
+    var counter = 0
+    val startTime = System.currentTimeMillis()
+    while (System.currentTimeMillis() < startTime + 500)
+        counter++
+
+    return counter
+}
+
+fun main() {
+    runBlocking {
+        val launchJob = launch {
+            repeat(5) {
+                doCpuHeavyWork()
+            }
+        }
+        delay(600.milliseconds)
+        launchJob.cancel()
+    }
+}
