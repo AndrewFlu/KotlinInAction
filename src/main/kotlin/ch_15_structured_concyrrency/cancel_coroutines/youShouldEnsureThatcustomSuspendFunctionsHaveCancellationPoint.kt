@@ -11,8 +11,11 @@ suspend fun doCpuHeavyWork(): Int {
     log("I'm doing work")
     var counter = 0
     val startTime = System.currentTimeMillis()
-    while (System.currentTimeMillis() < startTime + 500)
+    while (System.currentTimeMillis() < startTime + 500) {
         counter++
+        delay(100.milliseconds) // добавляем "точку остановки" для обеспечения возможности отмены этой корутины
+    }
+
 
     return counter
 }
