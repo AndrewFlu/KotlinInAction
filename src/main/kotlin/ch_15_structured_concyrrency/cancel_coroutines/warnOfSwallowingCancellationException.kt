@@ -1,5 +1,6 @@
 package ch_15_structured_concyrrency.cancel_coroutines
 
+import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.withTimeoutOrNull
@@ -17,9 +18,15 @@ fun main() {
             while(true) {
                 try {
                     doSomeWork()
-                } catch (e: Exception) {
-                    println("Cancellation exception swallowed. exception: $e")
                 }
+                // перехват более узкого типа исключения позволяет корректно отменить действие корутины
+                catch (ex: UnsupportedOperationException) {
+                    println(ex)
+                }
+                // а перехват верхнего типа "проглатывает" специализированное исключение и не позволяет корректно отменить работу корутины
+//                catch (e: Exception) {
+//                    println("Cancellation exception swallowed. exception: $e")
+//                }
             }
         }
     }
