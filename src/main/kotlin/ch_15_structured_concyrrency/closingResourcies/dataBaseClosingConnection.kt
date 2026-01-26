@@ -1,5 +1,6 @@
 package ch_15_structured_concyrrency.closingResourcies
 
+import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
@@ -15,18 +16,20 @@ class DataBaseConnection : AutoCloseable {
 
 fun main() {
     runBlocking {
-        val dbTask = launch {
-            val connection = DataBaseConnection()
-            try {
-                delay(500.milliseconds)
-                connection.write("MacBook is awesome! Mac OS is suck!")
-            } finally {
-                connection.close()
-            }
-        }
+        val dbTask = getDbTask_byFinally()
         delay(250.milliseconds)
         dbTask.cancel()
     }
 
     println("Oops! There is a leak resource")
+}
+
+private fun CoroutineScope.getDbTask_byFinally() = launch {
+    val connection = DataBaseConnection()
+    try {
+        delay(500.milliseconds)
+        connection.write("MacBook is awesome! Mac OS is suck!")
+    } finally {
+        connection.close()
+    }
 }
