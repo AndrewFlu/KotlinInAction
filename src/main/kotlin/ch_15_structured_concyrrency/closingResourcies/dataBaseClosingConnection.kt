@@ -1,6 +1,5 @@
 package ch_15_structured_concyrrency.closingResourcies
 
-import ch_07_nullable.gengeric_nullable.printHashCodeNotNull
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
@@ -18,9 +17,12 @@ fun main() {
     runBlocking {
         val dbTask = launch {
             val connection = DataBaseConnection()
-            delay(500.milliseconds)
-            connection.write("MacBook is awesome! Mac OS is suck!")
-            connection.close()
+            try {
+                delay(500.milliseconds)
+                connection.write("MacBook is awesome! Mac OS is suck!")
+            } finally {
+                connection.close()
+            }
         }
         delay(250.milliseconds)
         dbTask.cancel()
