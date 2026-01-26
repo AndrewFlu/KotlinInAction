@@ -19,6 +19,9 @@ fun main() {
         val dbTask = getDbTask_byFinally()
         delay(250.milliseconds)
         dbTask.cancel()
+        val dbtaskByuse = getDbTask_byUse()
+        delay(250.milliseconds)
+        dbtaskByuse.cancel()
     }
 
     println("Oops! There is a leak resource")
@@ -32,4 +35,12 @@ private fun CoroutineScope.getDbTask_byFinally() = launch {
     } finally {
         connection.close()
     }
+}
+
+private fun CoroutineScope.getDbTask_byUse() = launch {
+    DataBaseConnection().use {
+        delay(500.milliseconds)
+        it.write("Windows is perfect for working tasks!")
+    }
+
 }
