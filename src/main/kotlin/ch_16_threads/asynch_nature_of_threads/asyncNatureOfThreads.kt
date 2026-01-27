@@ -1,17 +1,21 @@
-package ch_16_threads.synch_nature_of_coroutines
+package ch_16_threads.asynch_nature_of_threads
 
 import ch_14_coroutines.coroutines_constructors.log
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.runBlocking
 import kotlin.time.Duration.Companion.seconds
 
-suspend fun createValues(): List<Int> {
-    return buildList {
-        add(1)
+fun createValues(): Flow<Int> {
+    return flow {
+        emit(1)
         delay(1.seconds)
-        add(2)
+        emit(2)
         delay(1.seconds)
-        add(3)
+        emit(3)
+        delay(1.seconds)
+        emit(4)
         delay(1.seconds)
     }
 }
@@ -19,8 +23,6 @@ suspend fun createValues(): List<Int> {
 fun main() {
     runBlocking {
         val values = createValues()
-        values.forEach {
-            log(it) // все значения выводятся только спустя 3 секунды
-        }
+        values.collect { log(it) }
     }
 }
