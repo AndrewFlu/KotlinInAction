@@ -17,7 +17,11 @@ val letters = flow {
 fun main() {
     runBlocking {
         letters.collect {
-            log("Collecting $it")
+            log("(1) Collecting $it")
+            delay(500.milliseconds)
+        }
+        letters.collect {
+            log("(2) Collecting $it")
             delay(500.milliseconds)
         }
     }
