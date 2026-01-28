@@ -17,6 +17,18 @@ val randomNumbers = flow {
     }
 }
 
+// Exception in thread "main" java.lang.IllegalStateException: Flow invariant is violated:
+//		Emission from another coroutine is detected.
+//val randomNumbers = flow {
+//    coroutineScope {
+//        repeat(10) {
+//            launch {
+//                emit(getRandomNumber())
+//            }
+//        }
+//    }
+//}
+
 fun main() {
     runBlocking {
         randomNumbers.collect {
