@@ -1,6 +1,5 @@
 package ch_16_threads.hot_threads
 
-import ch_14_coroutines.coroutines_constructors.log
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.SharingStarted
@@ -15,7 +14,7 @@ fun querySensor(): Int = Random.nextInt(-10, 30)
 
 fun getTemperatures(): Flow<Int> {
     return flow {
-        while(true) {
+        while (true) {
             emit(querySensor())
             delay(500.milliseconds)
         }
@@ -48,11 +47,11 @@ fun main() {
         val sharedTempsFlow = temps.shareIn(this, SharingStarted.Lazily)
 
         launch {
-            sharedTempsFlow.collect { println("$it Celsius")}
+            sharedTempsFlow.collect { println("$it Celsius") }
         }
 
         launch {
-            sharedTempsFlow.collect { println("${celsiusToFahrenheit(it)} Fahrenheit")}
+            sharedTempsFlow.collect { println("${celsiusToFahrenheit(it)} Fahrenheit") }
         }
     }
 }
