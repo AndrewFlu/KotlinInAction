@@ -9,6 +9,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import kotlin.random.Random
 import kotlin.time.Duration.Companion.milliseconds
+import kotlin.time.Duration.Companion.seconds
 
 class RadioStation {
     // определение нового изменяемого потока в качестве приватного свойства
@@ -31,6 +32,13 @@ class RadioStation {
 
 fun main() {
     runBlocking {
-        RadioStation().beginBroadCasting(this)
+        val radioStation = RadioStation()
+        radioStation.beginBroadCasting(this)
+
+        // добавляем подписчика
+        delay(1.seconds)
+        radioStation.messageFlow.collect {
+            println("Collecting $it")
+        }
     }
 }
