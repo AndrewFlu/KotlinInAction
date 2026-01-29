@@ -11,6 +11,10 @@ class ViewCounter {
     fun increment() {
         return _counter.update { it + 1 }
     }
+
+    fun incrementNonAtomic(): Int {
+        return _counter.value++
+    }
 }
 
 fun main() {
