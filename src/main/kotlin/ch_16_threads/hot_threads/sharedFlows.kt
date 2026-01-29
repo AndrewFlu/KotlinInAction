@@ -13,7 +13,7 @@ import kotlin.time.Duration.Companion.seconds
 
 class RadioStation {
     // определение нового изменяемого потока в качестве приватного свойства
-    private val _messageFlow = MutableSharedFlow<Int>()
+    private val _messageFlow = MutableSharedFlow<Int>(5) // 5 — количество доступных сообщений в потоке  для подписчика ПЕРЕД моментом подписки
 
     // предоставление общего потока в виде, доступном только для чтения
     val messageFlow = _messageFlow.asSharedFlow()
