@@ -22,7 +22,7 @@ class RadioStation {
         scope.launch {
             while (true) {
                 delay(500.milliseconds)
-                val number = Random.nextInt(0 ,10)
+                val number = Random.nextInt(0, 10)
                 log("Emiting $number")
                 _messageFlow.emit(number) // выброс значения в изменяемый общий поток из корутины
             }
@@ -36,9 +36,19 @@ fun main() {
         radioStation.beginBroadCasting(this)
 
         // добавляем подписчика
-        delay(1.seconds)
-        radioStation.messageFlow.collect {
-            println("Collecting $it")
+        launch {
+            delay(1.seconds)
+            radioStation.messageFlow.collect {
+                println("A collecting $it")
+            }
+        }
+
+        // добавляем ещё одного подписчика
+        launch {
+            delay(3.seconds)
+            radioStation.messageFlow.collect {
+                println("B collecting $it")
+            }
         }
     }
 }
