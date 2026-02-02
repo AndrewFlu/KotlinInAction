@@ -1,4 +1,4 @@
-package error_handling_and_testing.error_handling.byCoroutine_constructors
+package error_handling_and_testing.error_handling.by_coroutine_constructors
 
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
