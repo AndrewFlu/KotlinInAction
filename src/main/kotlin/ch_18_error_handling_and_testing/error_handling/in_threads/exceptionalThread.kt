@@ -1,4 +1,4 @@
-package error_handling_and_testing.error_handling.in_threads
+package ch_18_error_handling_and_testing.error_handling.in_threads
 
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.map

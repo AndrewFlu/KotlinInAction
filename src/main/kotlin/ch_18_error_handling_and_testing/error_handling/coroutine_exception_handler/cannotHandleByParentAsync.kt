@@ -1,4 +1,4 @@
-package error_handling_and_testing.error_handling.coroutine_exception_handler
+package ch_18_error_handling_and_testing.error_handling.coroutine_exception_handler
 
 import kotlinx.coroutines.*
 import kotlin.time.Duration.Companion.seconds

@@ -1,4 +1,4 @@
-package error_handling_and_testing.error_handling.by_coroutine_constructors
+package ch_18_error_handling_and_testing.error_handling.by_coroutine_constructors
 
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.async

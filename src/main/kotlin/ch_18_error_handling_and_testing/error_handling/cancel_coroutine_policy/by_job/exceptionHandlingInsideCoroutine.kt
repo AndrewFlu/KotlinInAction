@@ -1,4 +1,4 @@
-package error_handling_and_testing.error_handling.cancel_coroutine_policy.by_job
+package ch_18_error_handling_and_testing.error_handling.cancel_coroutine_policy.by_job
 
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
