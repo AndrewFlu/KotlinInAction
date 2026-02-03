@@ -1,6 +1,7 @@
 package ch_13_dsl.kotest
 
-import org.junit.jupiter.api.Test
+import org.junit.Test
+
 
 class PrefixTest {
 
